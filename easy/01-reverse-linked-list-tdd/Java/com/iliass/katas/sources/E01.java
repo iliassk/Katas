@@ -1,5 +1,8 @@
+import java.util.List;
+
 class E01 {
-    public String sayHello(){
-        return "Hello World!";
+
+    public List<Integer> reverseList(List<Integer> numbers) {
+        return numbers;
     }
 }

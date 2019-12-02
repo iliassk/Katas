@@ -1,11 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import static org.assertj.core.api.Assertions.*;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class E01Test {
 
@@ -17,9 +13,20 @@ class E01Test {
     }
 
     @Test
-    public void shouldReverseAListWithOnlyNullValues() {
-        List<Integer> numbers = Arrays.asList(null, null, null);
-
-        assertThat(numbers.equals(solution.reverseList(numbers))).isTrue();
+    public void shouldReverseAListWithOnlyOneElement() {
+        ListNode actualList = new ListNode(1);
+        assertThat(actualList.equals(solution.reverseList(actualList))).isTrue();
     }
+
+    @Test
+    public void shouldReverseAListWithTwoElements() {
+        ListNode actualList = new ListNode(1);
+        actualList.setNext(new ListNode(2));
+
+        ListNode expectedList = new ListNode(2);
+        expectedList.setNext(new ListNode(1));
+
+        assertThat(expectedList.equals(solution.reverseList(actualList))).isTrue();
+    }
+
 }

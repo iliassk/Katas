@@ -1,8 +1,7 @@
-import java.util.List;
-
 class E01 {
 
-    public List<Integer> reverseList(List<Integer> numbers) {
-        return numbers;
+    public ListNode reverseList(ListNode head) {
+        ListNode reversed = new ListNode(0);
+        return head;
     }
 }
